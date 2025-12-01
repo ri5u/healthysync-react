@@ -215,7 +215,7 @@ export default function RecentPatients() {
         ))}
         <EditPatientModal open={!!editing} onClose={() => setEditing(null)} patient={editing} onSaved={() => { setEditing(null); loadPatients() }} onRequestDelete={(p) => { setEditing(null); setDeleting(p) }} />
         <ConfirmDeleteModal open={!!deleting} onClose={() => setDeleting(null)} patient={deleting} onDeleted={() => { setDeleting(null); loadPatients() }} />
-        <NewPatientModal open={newPatientOpen} onClose={() => setNewPatientOpen(false)} onCreated={(id) => { setNewPatientOpen(false); loadPatients() }} />
+        <NewPatientModal open={newPatientOpen} onClose={() => setNewPatientOpen(false)} onCreated={() => { setNewPatientOpen(false); loadPatients() }} />
       </div>
     </Card>
   )
